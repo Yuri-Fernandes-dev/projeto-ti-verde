@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TI Verde - Tecnologia Sustentável</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -13,9 +12,9 @@
             <h1>TI Verde</h1>
             <nav>
                 <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#ods12">ODS 12</a></li>
-                    <li><a href="#dados">Dados</a></li>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="ods12.html">ODS 12</a></li>
+                    <li><a href="dados.html">Dados</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,52 +29,53 @@
             </div>
         </section>
 
-        <section id="ods12" class="ods">
+        <section class="content-section">
             <div class="container">
-                <h2>ODS 12 - Consumo e Produção Responsáveis</h2>
-                <div class="ods-content">
-                    <div class="ods-image">
-                        <!-- Placeholder para a imagem do ODS 12 -->
-                        <div class="ods-placeholder">
-                            <div class="ods-number">12</div>
-                            <div class="ods-title">CONSUMO E PRODUÇÃO RESPONSÁVEIS</div>
-                        </div>
+                <h2>Importância da TI Verde</h2>
+                <div class="content-grid">
+                    <div class="content-item">
+                        <h3>Redução do Impacto Ambiental</h3>
+                        <p>A indústria de TI é responsável por uma parcela significativa das emissões globais de carbono. Adotar práticas sustentáveis pode ajudar a reduzir essa pegada ambiental consideravelmente.</p>
                     </div>
-                    <div class="ods-text">
-                        <p>O <strong>Objetivo de Desenvolvimento Sustentável 12</strong> das Nações Unidas visa garantir padrões de consumo e produção sustentáveis.</p>
-                        <p>A TI Verde está diretamente alinhada com este objetivo através de práticas como:</p>
-                        <ul>
-                            <li>Redução do consumo de energia em data centers</li>
-                            <li>Prolongamento da vida útil de equipamentos eletrônicos</li>
-                            <li>Descarte adequado de e-lixo</li>
-                            <li>Virtualização de servidores</li>
-                            <li>Uso de fontes de energia renovável</li>
-                        </ul>
+                    <div class="content-item">
+                        <h3>Economia de Recursos</h3>
+                        <p>Práticas de TI Verde como virtualização de servidores, computação em nuvem e otimização de data centers podem reduzir o consumo de energia e a necessidade de hardware físico.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Gestão de E-lixo</h3>
+                        <p>O descarte responsável de equipamentos eletrônicos obsoletos ajuda a prevenir a contaminação do solo e da água por materiais tóxicos, além de permitir a recuperação de materiais valiosos.</p>
+                    </div>
+                    <div class="content-item">
+                        <h3>Eficiência Operacional</h3>
+                        <p>Muitas práticas de TI Verde também aumentam a eficiência operacional, resultando em economia de custos e melhor desempenho dos sistemas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="dados" class="charts">
+        <section class="practices-section">
             <div class="container">
-                <h2>Dados de Empresas Sustentáveis</h2>
-                <p>Abaixo estão representados dados de empresas que implementaram práticas de TI Verde e os resultados obtidos:</p>
-                
-                <div class="charts-container">
-                    <div class="chart-box">
-                        <h3>Economia de Energia</h3>
-                        <canvas id="economiaChart"></canvas>
-                    </div>
-                    <div class="chart-box">
-                        <h3>Práticas Implementadas</h3>
-                        <canvas id="praticasChart"></canvas>
-                    </div>
-                </div>
-                
-                <div class="company-details">
-                    <h3>Detalhes das Empresas</h3>
-                    <div id="empresasInfo"></div>
-                </div>
+                <h2>Principais Práticas de TI Verde</h2>
+                <ul class="practices-list">
+                    <li>
+                        <strong>Virtualização:</strong> Consolidar múltiplos servidores físicos em um único hardware, reduzindo o consumo de energia e a necessidade de equipamentos.
+                    </li>
+                    <li>
+                        <strong>Uso de Energias Renováveis:</strong> Alimentar data centers e infraestrutura de TI com fontes de energia renovável como solar, eólica ou hidrelétrica.
+                    </li>
+                    <li>
+                        <strong>Otimização de Refrigeração:</strong> Implementar sistemas eficientes de refrigeração em data centers para reduzir o consumo de energia.
+                    </li>
+                    <li>
+                        <strong>Ciclo de Vida de Equipamentos:</strong> Estender a vida útil de equipamentos e garantir o descarte responsável quando eles se tornarem obsoletos.
+                    </li>
+                    <li>
+                        <strong>Impressão Sustentável:</strong> Reduzir o desperdício de papel e tinta através de políticas de impressão conscientes e reciclagem.
+                    </li>
+                    <li>
+                        <strong>Computação em Nuvem:</strong> Utilizar serviços em nuvem para compartilhar recursos e reduzir a necessidade de infraestrutura local.
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
@@ -91,7 +91,5 @@
             </p>
         </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html> 

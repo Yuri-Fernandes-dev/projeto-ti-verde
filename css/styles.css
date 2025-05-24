@@ -84,7 +84,7 @@ nav a {
     position: relative;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     color: var(--accent-color);
 }
 
@@ -99,7 +99,7 @@ nav a::after {
     transition: width 0.3s;
 }
 
-nav a:hover::after {
+nav a:hover::after, nav a.active::after {
     width: 100%;
 }
 
@@ -120,6 +120,64 @@ nav a:hover::after {
 .hero p {
     max-width: 800px;
     margin: 0 auto 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* Variações do Hero */
+.ods-hero {
+    background: linear-gradient(to right, var(--ods12-color), #d4af37);
+}
+
+.data-hero {
+    background: linear-gradient(to right, #4682b4, #87ceeb);
+}
+
+/* Content Section */
+.content-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.content-item {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.content-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Practices Section */
+.practices-section {
+    padding: 4rem 0;
+    background-color: var(--accent-color);
+}
+
+.practices-list {
+    list-style-type: none;
+    margin-top: 2rem;
+}
+
+.practices-list li {
+    background-color: white;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.practices-list strong {
+    color: var(--primary-color);
     font-size: 1.1rem;
 }
 
@@ -180,14 +238,50 @@ nav a:hover::after {
     flex: 2;
 }
 
-.ods-text ul {
+.ods-text ul, .ods-list {
     margin-top: 1rem;
     padding-left: 1.5rem;
     list-style-type: disc;
 }
 
-.ods-text li {
+.ods-text li, .ods-list li {
+    margin-bottom: 1rem;
+}
+
+.ods-list {
+    padding: 0;
+    list-style-type: none;
+}
+
+.ods-list h3 {
+    color: var(--ods12-color);
     margin-bottom: 0.5rem;
+}
+
+/* ODS Goals Section */
+.ods-goals {
+    padding: 4rem 0;
+    background-color: #f9f5e9;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.goal-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--ods12-color);
+}
+
+.goal-item h3 {
+    color: var(--ods12-color);
+    margin-bottom: 1rem;
 }
 
 /* Charts Section */
@@ -270,6 +364,31 @@ canvas {
     margin-top: 0.5rem;
 }
 
+/* Data Analysis Section */
+.data-analysis {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.analysis-item {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-item h3 {
+    color: #4682b4;
+    margin-bottom: 1rem;
+}
+
 /* Footer */
 footer {
     background-color: var(--dark-green);
@@ -325,5 +444,11 @@ footer a:hover {
     
     .ods-title {
         font-size: 18px;
+    }
+    
+    .content-grid, 
+    .goals-grid, 
+    .analysis-grid {
+        grid-template-columns: 1fr;
     }
 } 

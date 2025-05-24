@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados - TI Verde</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TI Verde</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="ods12.html">ODS 12</a></li>
+                    <li><a href="dados.html" class="active">Dados</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero data-hero">
+            <div class="container">
+                <h2>Dados de Empresas Sustentáveis</h2>
+                <p>Análise comparativa de empresas que implementaram práticas de TI Verde e os resultados obtidos em termos de economia de energia e sustentabilidade.</p>
+            </div>
+        </section>
+
+        <section id="dados" class="charts">
+            <div class="container">
+                <h2>Visualização de Dados</h2>
+                <p>Abaixo estão representados dados de empresas que implementaram práticas de TI Verde e os resultados obtidos:</p>
+                
+                <div class="charts-container">
+                    <div class="chart-box">
+                        <h3>Economia de Energia</h3>
+                        <canvas id="economiaChart"></canvas>
+                    </div>
+                    <div class="chart-box">
+                        <h3>Práticas Implementadas</h3>
+                        <canvas id="praticasChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="company-details">
+                    <h3>Detalhes das Empresas</h3>
+                    <div id="empresasInfo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-analysis">
+            <div class="container">
+                <h2>Análise dos Resultados</h2>
+                <div class="analysis-grid">
+                    <div class="analysis-item">
+                        <h3>Economia de Energia</h3>
+                        <p>As práticas de TI Verde implementadas pelas empresas apresentadas resultaram em economias significativas de energia, variando de 10% a 40%. A instalação de painéis solares mostrou-se a prática mais eficiente em termos de redução do consumo energético.</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h3>Retorno do Investimento</h3>
+                        <p>As empresas relataram períodos de retorno de investimento variando de 12 a 36 meses, demonstrando que a adoção de práticas sustentáveis pode ser economicamente viável no médio prazo.</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h3>Benefícios Adicionais</h3>
+                        <p>Além da economia de energia, as empresas obtiveram benefícios como redução da pegada de carbono, melhoria da imagem corporativa, conformidade com regulamentações e recuperação de materiais valiosos.</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h3>Conclusões</h3>
+                        <p>Os dados indicam que a implementação de práticas de TI Verde não apenas contribui para a sustentabilidade ambiental, mas também pode representar uma vantagem competitiva e econômica para as empresas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Site desenvolvido como projeto educacional sobre TI Verde</p>
+            <p>
+                <a href="https://github.com/seu-usuario/projeto-ti-verde" target="_blank">
+                    <object data="img/github.svg" type="image/svg+xml" class="github-icon"></object>
+                    Repositório no GitHub
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
