@@ -53,6 +53,38 @@ ul {
     list-style-type: none;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: white;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Transformação do hamburger em X quando ativo */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
 /* Header */
 header {
     background-color: var(--primary-color);
@@ -136,11 +168,23 @@ nav a:hover::after, nav a.active::after {
     color: white;
 }
 
-.dropdown:hover .dropdown-content {
+/* Em desktop, mostra dropdown no hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn {
+        color: var(--accent-color);
+    }
+}
+
+/* Classe para controlar exibição no modo mobile */
+.dropdown-active .dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
+.dropdown-active .dropbtn {
     color: var(--accent-color);
 }
 
@@ -701,8 +745,8 @@ footer a:hover {
     }
     
     header .container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-direction: row;
+        align-items: center;
     }
     
     .ods-placeholder {
@@ -731,19 +775,65 @@ footer a:hover {
         flex-direction: column;
     }
     
+    /* Mostrar hamburger */
+    .hamburger {
+        display: block;
+    }
+    
+    /* Esconder navegação por padrão */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    /* Mostrar navegação quando classe 'menu-open' é adicionada */
+    nav.menu-open {
+        max-height: 500px;
+    }
+    
     nav ul {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+    
+    nav a {
+        display: block;
+        padding: 0.8rem 0;
+    }
+    
+    .dropdown {
+        width: 100%;
     }
     
     .dropdown-content {
         position: static;
-        display: none;
         width: 100%;
         box-shadow: none;
+        display: none;
+        background-color: var(--dark-green);
     }
     
+    /* Removendo o comportamento de hover para mobile */
     .dropdown:hover .dropdown-content {
+        display: none;
+    }
+    
+    /* Somente exibir o dropdown quando a classe active estiver presente */
+    .dropdown-active .dropdown-content {
         display: block;
     }
 } 
