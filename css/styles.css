@@ -145,6 +145,22 @@ nav a:hover::after, nav a.active::after {
     display: inline-block;
 }
 
+.dropbtn {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropbtn:hover {
+    color: var(--accent-color);
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -815,30 +831,16 @@ footer a:hover {
         padding: 0.8rem 0;
     }
     
+    /* Estilo para dispositivos touch */
     .dropdown {
         width: 100%;
+        touch-action: manipulation;
     }
     
-    .dropdown-content {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        display: none;
+    /* Destacar o botão ativo */
+    .dropdown-active .dropbtn {
         background-color: var(--dark-green);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-    }
-    
-    /* Removendo o comportamento de hover para mobile */
-    .dropdown:hover .dropdown-content {
-        display: none;
-    }
-    
-    /* Somente exibir o dropdown quando a classe active estiver presente */
-    .dropdown-active .dropdown-content {
-        display: block;
-        max-height: 1000px;
+        color: white;
     }
     
     /* Melhorar a área de clique do dropdown em mobile */
@@ -847,16 +849,23 @@ footer a:hover {
         justify-content: center;
         align-items: center;
         width: 100%;
-        padding: 15px 0;
+        padding: 20px 0;
+        margin: 0;
         cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        font-weight: bold;
+        position: relative;
+        border-radius: 0;
+        transition: background-color 0.3s;
     }
     
     /* Indicador visual de que o menu tem submenu */
     .dropbtn:after {
         content: '▼';
-        font-size: 10px;
-        margin-left: 8px;
+        font-size: 12px;
+        margin-left: 10px;
         transition: transform 0.3s;
+        display: inline-block;
     }
     
     .dropdown-active .dropbtn:after {
@@ -864,13 +873,27 @@ footer a:hover {
     }
     
     /* Melhorar visibilidade e espaçamento dos itens do submenu */
-    .dropdown-content a {
-        padding: 15px 10px;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        background-color: var(--dark-green);
+        box-shadow: none;
+        border-radius: 0;
     }
     
-    .dropdown-content a:first-child {
-        border-top: none;
+    .dropdown-active .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown-content a {
+        padding: 18px 10px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 16px;
+    }
+    
+    .dropdown-content a:active {
+        background-color: var(--primary-color);
     }
 } 
