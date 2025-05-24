@@ -825,6 +825,9 @@ footer a:hover {
         box-shadow: none;
         display: none;
         background-color: var(--dark-green);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
     }
     
     /* Removendo o comportamento de hover para mobile */
@@ -835,5 +838,39 @@ footer a:hover {
     /* Somente exibir o dropdown quando a classe active estiver presente */
     .dropdown-active .dropdown-content {
         display: block;
+        max-height: 1000px;
+    }
+    
+    /* Melhorar a área de clique do dropdown em mobile */
+    .dropbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 15px 0;
+        cursor: pointer;
+    }
+    
+    /* Indicador visual de que o menu tem submenu */
+    .dropbtn:after {
+        content: '▼';
+        font-size: 10px;
+        margin-left: 8px;
+        transition: transform 0.3s;
+    }
+    
+    .dropdown-active .dropbtn:after {
+        transform: rotate(180deg);
+    }
+    
+    /* Melhorar visibilidade e espaçamento dos itens do submenu */
+    .dropdown-content a {
+        padding: 15px 10px;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .dropdown-content a:first-child {
+        border-top: none;
     }
 } 

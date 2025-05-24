@@ -3,114 +3,90 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     const dropdownBtns = document.querySelectorAll('.dropbtn');
-    const dropdowns = document.querySelectorAll('.dropdown');
     
     // Controle do Menu Hamburger
-    hamburger.addEventListener('click', function() {
-        // Toggle da classe active para o ícone hamburger
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
         hamburger.classList.toggle('active');
-        
-        // Toggle da classe menu-open para a navegação
         nav.classList.toggle('menu-open');
+    });
+    
+    // Simplificando o gerenciamento de dropdown com delegação de eventos
+    document.addEventListener('click', function(event) {
+        const target = event.target;
         
-        // Fechar todos os submenus quando o menu principal é fechado
-        if (!nav.classList.contains('menu-open')) {
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('dropdown-active');
-            });
-        }
-    });
-    
-    // Garante que todos os menus comecem fechados
-    dropdowns.forEach(dropdown => {
-        dropdown.classList.remove('dropdown-active');
-    });
-    
-    // Adiciona evento de clique para cada botão dropdown
-    dropdownBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            // Previne o comportamento padrão de navegação do link
-            e.preventDefault();
-            e.stopPropagation();
+        // Verifica se o clique foi em um botão dropdown
+        if (target.classList.contains('dropbtn') || target.closest('.dropbtn')) {
+            event.preventDefault();
             
-            // Pega o elemento pai (dropdown)
-            const dropdown = this.parentElement;
+            // Obtém o elemento dropdown pai do botão clicado
+            const dropdown = target.classList.contains('dropbtn') 
+                ? target.parentElement 
+                : target.closest('.dropbtn').parentElement;
             
-            // Verifica se está em modo móvel (largura menor que 769px)
+            // Em mobile, alterna a classe de ativo
             if (window.innerWidth <= 768) {
-                // Verifica se o dropdown atual está aberto
-                const isOpen = dropdown.classList.contains('dropdown-active');
+                // Verifica se o dropdown atual já está ativo
+                const isActive = dropdown.classList.contains('dropdown-active');
                 
-                // Fecha todos os dropdowns primeiro
-                dropdowns.forEach(item => {
-                    item.classList.remove('dropdown-active');
+                // Remove a classe ativa de todos os dropdowns
+                const allDropdowns = document.querySelectorAll('.dropdown');
+                allDropdowns.forEach(item => {
+                    if (item !== dropdown) {
+                        item.classList.remove('dropdown-active');
+                    }
                 });
                 
-                // Se o dropdown não estava aberto, abre-o
-                if (!isOpen) {
-                    dropdown.classList.add('dropdown-active');
-                }
+                // Alterna a classe para o dropdown atual
+                dropdown.classList.toggle('dropdown-active');
             }
-        });
-    });
-    
-    // Adiciona evento para fechar menu quando clicar fora dele
-    document.addEventListener('click', function(e) {
-        const isClickInsideNav = nav.contains(e.target);
-        const isClickOnHamburger = hamburger.contains(e.target);
-        
-        // Se clicar fora do menu e fora do hamburger, fechar menu
-        if (!isClickInsideNav && !isClickOnHamburger && window.innerWidth <= 768) {
-            nav.classList.remove('menu-open');
-            hamburger.classList.remove('active');
-            
-            // Fechar todos os dropdowns também
-            dropdowns.forEach(dropdown => {
+        } 
+        // Se clicou fora de qualquer dropdown e fora do hamburger
+        else if (!target.closest('.dropdown') && !target.closest('.hamburger')) {
+            // Fecha todos os dropdowns
+            const allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(dropdown => {
                 dropdown.classList.remove('dropdown-active');
             });
-        }
-        
-        // Fechar dropdown quando clicar fora dele, mas dentro do menu
-        if (isClickInsideNav && !e.target.closest('.dropdown')) {
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('dropdown-active');
-            });
-        }
-    });
-    
-    // Ajuste para redimensionamento de tela
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            // Em telas maiores, remover classes mobile
-            hamburger.classList.remove('active');
-            nav.classList.remove('menu-open');
             
-            // E remover dropdown ativo
-            dropdowns.forEach(dropdown => {
-                dropdown.classList.remove('dropdown-active');
-            });
-        }
-    });
-    
-    // Garantir que os links dentro do dropdown funcionem normalmente
-    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
-    dropdownLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Permite que o link funcione normalmente
-            e.stopPropagation();
-            
-            // Fecha o menu após clicar em um link (em mobile)
-            if (window.innerWidth <= 768) {
+            // Se estiver em mobile e clicou fora do menu, fecha o menu também
+            if (window.innerWidth <= 768 && !target.closest('nav')) {
                 nav.classList.remove('menu-open');
                 hamburger.classList.remove('active');
-                
-                // Opcional: Tempo para ver o link ativo antes de fechar
+            }
+        }
+    });
+    
+    // Garante que os links dentro do dropdown funcionem corretamente
+    const dropdownLinks = document.querySelectorAll('.dropdown-content a');
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Em modo mobile, fecha o menu após clicar em um link
+            if (window.innerWidth <= 768) {
                 setTimeout(() => {
-                    dropdowns.forEach(dropdown => {
+                    nav.classList.remove('menu-open');
+                    hamburger.classList.remove('active');
+                    
+                    const allDropdowns = document.querySelectorAll('.dropdown');
+                    allDropdowns.forEach(dropdown => {
                         dropdown.classList.remove('dropdown-active');
                     });
-                }, 300);
+                }, 100);
             }
         });
+    });
+    
+    // Ajusta o menu em caso de redimensionamento
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            // Em telas maiores, remove todas as classes mobile
+            hamburger.classList.remove('active');
+            nav.classList.remove('menu-open');
+            
+            const allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('dropdown-active');
+            });
+        }
     });
 }); 
