@@ -1,0 +1,41 @@
+[
+  {
+    "nome": "EcoData",
+    "pratica": "Virtualização de servidores",
+    "economiaEnergia": 25,
+    "descricao": "A EcoData implementou uma estratégia de virtualização que reduziu o número de servidores físicos em 70%, diminuindo significativamente o consumo de energia e a necessidade de refrigeração do data center.",
+    "anoImplementacao": 2019,
+    "retornoInvestimento": "18 meses",
+    "beneficiosAdicionais": [
+      "Redução de espaço físico",
+      "Menor necessidade de manutenção",
+      "Maior flexibilidade para escalar recursos"
+    ]
+  },
+  {
+    "nome": "GreenTech",
+    "pratica": "Painéis solares no data center",
+    "economiaEnergia": 40,
+    "descricao": "A GreenTech instalou um sistema de painéis solares que fornece aproximadamente 40% da energia necessária para seu data center, reduzindo significativamente a dependência de fontes não renováveis.",
+    "anoImplementacao": 2020,
+    "retornoInvestimento": "36 meses",
+    "beneficiosAdicionais": [
+      "Redução da pegada de carbono",
+      "Proteção contra flutuações no preço da energia",
+      "Melhoria da imagem corporativa"
+    ]
+  },
+  {
+    "nome": "SustentTI",
+    "pratica": "Descarte sustentável de e-lixo",
+    "economiaEnergia": 10,
+    "descricao": "A SustentTI implementou um programa abrangente de gestão de ciclo de vida de equipamentos eletrônicos, que inclui reutilização, reciclagem e descarte responsável. Embora a economia de energia seja menor, o impacto ambiental é significativo.",
+    "anoImplementacao": 2021,
+    "retornoInvestimento": "12 meses",
+    "beneficiosAdicionais": [
+      "Redução de riscos ambientais",
+      "Conformidade com regulamentações",
+      "Recuperação de materiais valiosos"
+    ]
+  }
+] 
