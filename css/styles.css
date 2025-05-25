@@ -204,6 +204,66 @@ nav a:hover::after, nav a.active::after {
     color: var(--accent-color);
 }
 
+/* Dropdown Menu */
+.dropbtn-mobile {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropbtn-mobile:hover {
+    color: var(--accent-color);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--dark-green);
+    color: white;
+}
+
+/* Em desktop, mostra dropdown no hover */
+@media (min-width: 769px) {
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .dropdown:hover .dropbtn-mobile {
+        color: var(--accent-color);
+    }
+}
+
+/* Classe para controlar exibição no modo mobile */
+.dropdown-active .dropdown-content {
+    display: block;
+}
+
+.dropdown-active .dropbtn-mobile {
+    color: var(--accent-color);
+}
+
 /* Hero Section */
 .hero {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
@@ -807,11 +867,13 @@ footer a:hover {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.5s ease;
+        z-index: 100;
     }
     
     /* Mostrar navegação quando classe 'menu-open' é adicionada */
     nav.menu-open {
-        max-height: 500px;
+        max-height: 1000px;
+        overflow-y: auto;
     }
     
     nav ul {
@@ -823,77 +885,60 @@ footer a:hover {
     nav ul li {
         width: 100%;
         text-align: center;
-        padding: 0.5rem 0;
+        padding: 0;
+        margin: 0;
     }
     
     nav a {
         display: block;
-        padding: 0.8rem 0;
+        padding: 10px 0;
     }
     
-    /* Estilo para dispositivos touch */
-    .dropdown {
-        width: 100%;
-        touch-action: manipulation;
-    }
-    
-    /* Destacar o botão ativo */
-    .dropdown-active .dropbtn {
-        background-color: var(--dark-green);
-        color: white;
-    }
-    
-    /* Melhorar a área de clique do dropdown em mobile */
-    .dropbtn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 20px 0;
-        margin: 0;
-        cursor: pointer;
-        -webkit-tap-highlight-color: rgba(0,0,0,0);
-        font-weight: bold;
-        position: relative;
-        border-radius: 0;
-        transition: background-color 0.3s;
-    }
-    
-    /* Indicador visual de que o menu tem submenu */
-    .dropbtn:after {
-        content: '▼';
-        font-size: 12px;
-        margin-left: 10px;
-        transition: transform 0.3s;
-        display: inline-block;
-    }
-    
-    .dropdown-active .dropbtn:after {
-        transform: rotate(180deg);
-    }
-    
-    /* Melhorar visibilidade e espaçamento dos itens do submenu */
+    /* SOLUÇÃO RADICAL: Sempre mostrar o dropdown em modo mobile */
     .dropdown-content {
+        display: block !important;
         position: static;
-        display: none;
         width: 100%;
+        max-height: none;
+        overflow: visible;
         background-color: var(--dark-green);
         box-shadow: none;
         border-radius: 0;
+        margin: 0;
+        padding: 0;
     }
     
-    .dropdown-active .dropdown-content {
+    /* Estilizar o cabeçalho do dropdown como um título, não como botão */
+    .dropbtn-mobile {
         display: block;
-    }
-    
-    .dropdown-content a {
-        padding: 18px 10px;
-        text-align: center;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: 16px;
-    }
-    
-    .dropdown-content a:active {
+        width: 100%;
+        padding: 10px 0;
+        margin: 0;
         background-color: var(--primary-color);
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    /* Melhorar a aparência de cada item do submenu */
+    .dropdown-content a {
+        padding: 8px 0;
+        background-color: rgba(0,0,0,0.2);
+        font-size: 14px;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Destaque para o item ativo */
+    .dropdown-content a.active {
+        background-color: var(--primary-color);
+        font-weight: bold;
+    }
+    
+    /* Remover indicador do dropdown já que está sempre visível */
+    .dropbtn-mobile:after {
+        display: none;
     }
 } 
