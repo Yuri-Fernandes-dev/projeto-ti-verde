@@ -25,9 +25,9 @@ function criarGraficoEconomia(dados) {
                 label: 'Economia de Energia (%)',
                 data: economias,
                 backgroundColor: [
-                    '#2e8b57', // EcoData
-                    '#66cdaa', // GreenTech
-                    '#8fbc8f'  // SustentTI
+                    '#2e8b57', // Nexxio
+                    '#66cdaa', // CABTI
+                    '#8fbc8f'  // Powertech
                 ],
                 borderColor: [
                     '#1a5c38',
@@ -88,9 +88,9 @@ function criarGraficoPraticas(dados) {
             datasets: [{
                 data: economias,
                 backgroundColor: [
-                    '#2e8b57', // EcoData
-                    '#66cdaa', // GreenTech
-                    '#8fbc8f'  // SustentTI
+                    '#2e8b57', // Nexxio
+                    '#66cdaa', // CABTI
+                    '#8fbc8f'  // Powertech
                 ],
                 borderColor: '#ffffff',
                 borderWidth: 2

@@ -1,9 +1,9 @@
 [
   {
-    "nome": "EcoData",
+    "nome": "Nexxio",
     "pratica": "Virtualização de servidores",
     "economiaEnergia": 25,
-    "descricao": "A EcoData implementou uma estratégia de virtualização que reduziu o número de servidores físicos em 70%, diminuindo significativamente o consumo de energia e a necessidade de refrigeração do data center.",
+    "descricao": "A Nexxio implementou uma estratégia de virtualização que reduziu o número de servidores físicos em 70%, diminuindo significativamente o consumo de energia e a necessidade de refrigeração do data center.",
     "anoImplementacao": 2019,
     "retornoInvestimento": "18 meses",
     "beneficiosAdicionais": [
@@ -13,29 +13,31 @@
     ]
   },
   {
-    "nome": "GreenTech",
-    "pratica": "Painéis solares no data center",
-    "economiaEnergia": 40,
-    "descricao": "A GreenTech instalou um sistema de painéis solares que fornece aproximadamente 40% da energia necessária para seu data center, reduzindo significativamente a dependência de fontes não renováveis.",
+    "nome": "CABTI",
+    "pratica": "Otimização de desempenho e eficiência energética",
+    "economiaEnergia": 30,
+    "descricao": "A CABTI, com mais de 15 anos de experiência em TI, especializa-se em otimização de sistemas para resolver problemas de lentidão, implementando soluções que não apenas melhoram o desempenho mas também reduzem o consumo energético de computadores e notebooks.",
     "anoImplementacao": 2020,
-    "retornoInvestimento": "36 meses",
+    "retornoInvestimento": "24 meses",
     "beneficiosAdicionais": [
-      "Redução da pegada de carbono",
-      "Proteção contra flutuações no preço da energia",
-      "Melhoria da imagem corporativa"
+      "Aumento da vida útil dos equipamentos",
+      "Redução do consumo energético",
+      "Melhoria significativa na performance dos sistemas",
+      "Suporte especializado em desenvolvimento web sustentável"
     ]
   },
   {
-    "nome": "SustentTI",
-    "pratica": "Descarte sustentável de e-lixo",
-    "economiaEnergia": 10,
-    "descricao": "A SustentTI implementou um programa abrangente de gestão de ciclo de vida de equipamentos eletrônicos, que inclui reutilização, reciclagem e descarte responsável. Embora a economia de energia seja menor, o impacto ambiental é significativo.",
+    "nome": "Powertech",
+    "pratica": "Gestão eficiente de infraestrutura e reaproveitamento",
+    "economiaEnergia": 35,
+    "descricao": "A Powertech, especializada em consultoria de TI, administração de servidores e assistência técnica, implementou práticas sustentáveis através da otimização de infraestrutura, reparo e reaproveitamento de equipamentos, reduzindo a necessidade de novos recursos.",
     "anoImplementacao": 2021,
-    "retornoInvestimento": "12 meses",
+    "retornoInvestimento": "18 meses",
     "beneficiosAdicionais": [
-      "Redução de riscos ambientais",
-      "Conformidade com regulamentações",
-      "Recuperação de materiais valiosos"
+      "Extensão da vida útil dos equipamentos através de reparos",
+      "Otimização de redes estruturadas para maior eficiência",
+      "Redução de desperdício através de reaproveitamento",
+      "Consultoria especializada em soluções sustentáveis"
     ]
   }
 ] 
